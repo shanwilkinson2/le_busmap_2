@@ -139,11 +139,11 @@ server <- function(input, output, session) {
   # render sidebar menu - needed if reactive stuff on page
   output$menu <- renderMenu({
     sidebarMenu(
-      menuItem("Map", tabName = "map", icon = icon("map-signs")),
-      menuItem("Explore selected data", tabName = "data_selected", icon = icon("table-columns")),
-      menuItem("Explore all data", tabName = "data_all", icon = icon("table")),
-      menuItem("Download all data", tabName = "downloads", icon = icon("file-arrow-down")),
-      menuItem("Details", tabName = "details", icon = icon("comment-dots"))
+      menuItem("Map selected route", tabName = "map", icon = icon("map-location-dot")),
+      menuItem("Explore selected route", tabName = "data_selected", icon = icon("magnifying-glass-location")),
+      menuItem("Explore all routes", tabName = "data_all", icon = icon("magnifying-glass")),
+      menuItem("Download all data", tabName = "downloads", icon = icon("download")),
+      menuItem("Details", tabName = "details", icon = icon("circle-info"))
     )
   })
   # makes the menu not update itself when other reactive stuff changes
@@ -239,8 +239,8 @@ server <- function(input, output, session) {
     
     base <- leaflet() %>%
       addProviderTiles("Stadia.AlidadeSmooth") %>%
-      addPolylines(data = la_boundaries, fill = FALSE, color = "#444444",
-                  weight = 1.5, popup = ~la, options = pathOptions(interactive = FALSE)) %>%
+      addPolylines(data = la_boundaries, fill = TRUE, fillOpacity = 0, color = "#444444",
+                  weight = 1.5, popup = ~la) %>%
       addControl("Hover over a bus stop to find out more",
                  position = "topright")
     
