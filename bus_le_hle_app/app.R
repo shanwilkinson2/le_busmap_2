@@ -13,7 +13,7 @@ library(shinyjs)
 library(DT)
 
 # datasets
-  full_data <- readRDS("bus_le_hle.rds")
+  full_data <- readRDS("bus_le_hle.RDS")
   la_boundaries <- readRDS("la_boundaries.RDS")
   route_summaries <- readRDS("route_summaries.RDS")
   route_boroughs <- readRDS("route_boroughs.RDS")
