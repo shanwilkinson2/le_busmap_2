@@ -57,6 +57,14 @@ library(stringr)
   msoas$wanted <- ifelse(msoas$la %in% wanted_las, TRUE, FALSE)
   # msoas <- msoas |> st_transform(27700) # British national grid  
   
+  la_boundaries <- msoas |>
+    filter(wanted == TRUE) |>
+    group_by(la) |>
+    summarise()
+  
+  # save boundaries for app
+  saveRDS(la_boundaries, "./app/la_boundaries.RDS")
+  
 # get routes that have at least 1 stop in the wanted area ########################
   
 # join stops to msoa

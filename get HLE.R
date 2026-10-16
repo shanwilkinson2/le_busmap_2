@@ -10,7 +10,7 @@ hle <- read.csv("https://fingertips.phe.org.uk/api/all_data/csv/for_one_indicato
 
 hle_2 <- hle |>
   filter(area_type == "MSOA" & age == "All ages") |>
-  mutate(metric = "HLE") |>
+  mutate(metric = "Healthy Life Expectancy") |>
   select(indicator_name, area_code, area_name, 
          time_period, time_period_sortable, sex, metric, value)|>
   group_by(area_code, sex) |>
