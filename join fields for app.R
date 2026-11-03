@@ -5,6 +5,9 @@ library(sf)
 
 # read in files
 
+ wanted_las <- c("Bolton", "Bury", "Manchester", "Oldham", "Rochdale", 
+                 "Salford", "Stockport", "Tameside", "Trafford", "Wigan")
+
 le <- readRDS("life_expectancy.RDS")
 hle <- readRDS("healthy_life_expectancy.RDS")
 bus <- readRDS("bus_routes.RDS")
@@ -57,9 +60,7 @@ bus_le_hle <- bus |>
 # routes with a stop in which borough 
   route_boroughs <- bus_le_hle |>
     distinct(route_short_name, agency_name, route_shortname_description, la) %>%
-    filter(la %in% 
-             c("Bolton", "Bury", "Manchester", "Oldham", "Rochdale", 
-               "Salford", "Stockport", "Tameside", "Trafford", "Wigan"))
+    filter(la %in% wanted_las)
   
 # save
   saveRDS(bus_le_hle, "./app/bus_le_hle.RDS")
