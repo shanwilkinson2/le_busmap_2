@@ -50,7 +50,7 @@ library(stringr)
 # load in MSOA data  
   wanted_las <- c("Bolton", "Bury", "Manchester", "Oldham", "Rochdale", 
                   "Salford", "Stockport", "Tameside", "Trafford", "Wigan")
-  wanted_las <- "Bolton"
+  # wanted_las <- "Bolton"
   
   msoas <- st_read("Middle_layer_Super_Output_Areas_December_2021_Boundaries_EW_BGC_V3_-4477917303172606123.geojson")
   msoas$la <- str_sub(msoas$MSOA21NM, 1, -5) 
