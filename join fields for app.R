@@ -5,8 +5,7 @@ library(sf)
 
 # read in files
 
- wanted_las <- c("Bolton", "Bury", "Manchester", "Oldham", "Rochdale", 
-                 "Salford", "Stockport", "Tameside", "Trafford", "Wigan")
+source("wanted_las.R") # get wanted local authorities
 
 le <- readRDS("life_expectancy.RDS")
 hle <- readRDS("healthy_life_expectancy.RDS")
