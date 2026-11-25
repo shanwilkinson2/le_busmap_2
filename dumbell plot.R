@@ -7,13 +7,16 @@ library(tidytext)
 library(forcats)
 library(stringr)
 
-# change these 
+# change these ###################################################################################################
   wanted_route_num <- "533"
   wanted_route_agency_name <- "Bee Network"
+
 # replace file_location wtih "" if file is in the project location
   file_location <- "C:/users/wilkinsons5/Downloads/"
 
 # download 'stop & route data' from the app https://shanwilkinson2.shinyapps.io/bus_le_hle_app/
+
+# run the rest ####################################################################################################
 
 wanted_route <- fread(paste0(file_location, "bus_le_hle_full_route_data.csv")) %>%
   filter(route_short_name == wanted_route_num & agency_name == wanted_route_agency_name)
