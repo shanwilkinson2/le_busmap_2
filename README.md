@@ -8,3 +8,6 @@ The following files prepare the data for the app:
 - join fields for app.R
 
 App & associated files are in the folder "bus_le_hle_app"
+
+- dumbell plot.R creates a plot showing inequalities on a selected route
+- dumbell plot.png shows an example of what the code creates
