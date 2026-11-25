@@ -50,7 +50,7 @@ ext <- wanted_route_summary %>%
 
 off <- 1 # gap so the line starts after the dot's value label
 
-  #myplot <- 
+  myplot <- 
     ggplot(wanted_route_summary, aes(y = area_order)) +
     # solid bar - difference between LE & HLE  
     geom_segment(aes(x = `Healthy Life Expectancy`, xend = `Life Expectancy`, yend = area_order), 
